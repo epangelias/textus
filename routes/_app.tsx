@@ -1,4 +1,5 @@
 import { type PageProps } from "$fresh/server.ts";
+import { WebAppify } from "../components/WebAppify.tsx";
 export default function App({ Component }: PageProps) {
   return (
     <html>
@@ -8,7 +9,8 @@ export default function App({ Component }: PageProps) {
         <title>Textus</title>
         <link rel="stylesheet" href="/css/main.css" />
         <meta name="color-scheme" content="light dark" />
-        <link rel="icon" href={emojiToUrl("📜")} />
+        <link rel="icon" href="/favicon.ico" />
+        <WebAppify />
       </head>
       <body>
         <Component />
