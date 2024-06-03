@@ -16,11 +16,11 @@ textarea {
   font-size: 2em;
   border: none;
   background: none;
-  min-height: 100vh;
   margin: 0;
   word-wrap: break-word;
   text-wrap: unrestricted;
   max-width: 100%;
+  min-height: 100svh;
 
   &:focus {
     outline: none;
