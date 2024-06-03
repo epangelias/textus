@@ -1,8 +1,10 @@
 import { useSignal } from "@preact/signals";
+import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useEffect } from "preact/hooks";
 
 export function Textus({ id }: { id: string }) {
-  const text = useSignal(localStorage.getItem("textus-" + id) || "");
+  const defaultText = localStorage ? localStorage.getItem("textus-" + id) : "";
+  const text = useSignal(defaultText || "");
 
   useEffect(() => {
     const firstLine = text.value.split("\n")[0];
