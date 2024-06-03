@@ -1,7 +1,7 @@
 export function WebAppify() {
   return (
     <>
-      <meta name="theme-color" content="#000000" />
+      <meta name="theme-color" content="#c1694f" />
       <meta
         name="apple-mobile-web-app-status-bar-style"
         content="translucent"
