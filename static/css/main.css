@@ -20,8 +20,16 @@ textarea {
   margin: 0;
   word-wrap: break-word;
   text-wrap: unrestricted;
+  max-width: 100%;
 
   &:focus {
     outline: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  textarea {
+    font-size: 1.2rem;
+    --padding: 1rem !important;
   }
 }

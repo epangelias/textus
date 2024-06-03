@@ -16,7 +16,7 @@ export function Textus({ id }: { id: string }) {
     <div>
       <div className="textarea-wrap">
         <textarea
-          placeholder="Textus"
+          placeholder="..."
           value={text}
           onInput={(e) =>
             text.value = e.target.parentNode.dataset.replicatedValue = e.target
