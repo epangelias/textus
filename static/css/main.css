@@ -22,6 +22,7 @@ html {
   word-wrap: break-word;
   text-wrap: unrestricted;
   max-width: 100%;
+  margin-bottom: 1rem;
 
   &:focus {
     outline: none;
