@@ -27,15 +27,18 @@ export function Textus({ id }: { id: string }) {
   return (
     <div>
       <div className="textarea-wrap">
-        <pre
+        <div
           class={`textbox${empty.value ? " empty" : ""}`}
           contenteditable
           role="textbox"
           placeholder="..."
           onInput={updateValue}
+          dangerouslySetInnerHTML={{
+            __html: defaultText.value.replace(/\n/g, "<br>"),
+          }}
         >
           {defaultText}
-        </pre>
+        </div>
       </div>
     </div>
   );
