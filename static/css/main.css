@@ -21,11 +21,18 @@ textarea {
   word-wrap: break-word;
   text-wrap: unrestricted;
   max-width: 100%;
-  min-height: 100svh;
 
   &:focus {
     outline: none;
   }
+
+  &::first-line {
+    font-weight: bold;
+  }
+}
+
+textarea:first-line {
+  font-weight: bold !important;
 }
 
 @media screen and (max-width: 800px) {

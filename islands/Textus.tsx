@@ -10,6 +10,8 @@ export function Textus({ id }: { id: string }) {
     const firstLine = text.value.split("\n")[0];
     document.title = firstLine || id || "Textus";
     localStorage.setItem("textus-" + id, text.value);
+
+    globalThis.onclick = () => document.querySelector("textarea").focus();
   }, [text.value]);
 
   return (
