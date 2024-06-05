@@ -16,6 +16,7 @@ export function Textus({ id }: { id: string }) {
   useEffect(() => {
     const firstLine = text.value.split("\n")[0];
     document.title = firstLine || id || "Textus";
+    console.log(text.value);
     localStorage.setItem("textus-" + id, text.value);
   }, [text.value]);
 
