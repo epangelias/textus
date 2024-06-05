@@ -4,10 +4,12 @@ import { useEffect } from "preact/hooks";
 
 export function Textus({ id }: { id: string }) {
   if (!IS_BROWSER) return <></>;
-  const text = useSignal(localStorage.getItem("textus-" + id) || "");
+  const defaultText = useSignal(localStorage.getItem("textus-" + id) || "");
+  const text = useSignal(defaultText.value);
   const empty = useComputed(() => !text.value.trim());
 
   useEffect(() => {
+    console.log(text.value);
     globalThis.onclick = () => document.querySelector(".textbox").focus();
   }, []);
 
@@ -19,22 +21,21 @@ export function Textus({ id }: { id: string }) {
 
   function updateValue(e: Event) {
     const target = e.target as HTMLDivElement;
-    text.value = target.innerText;
+    text.value = target.innerText || "";
   }
 
   return (
     <div>
       <div className="textarea-wrap">
-        <div
+        <pre
           class={`textbox${empty.value ? " empty" : ""}`}
           contenteditable
           role="textbox"
           placeholder="..."
-          value={text}
-          onKeyDown={updateValue}
-          onKeyUp={updateValue}
+          onInput={updateValue}
         >
-        </div>
+          {defaultText}
+        </pre>
       </div>
     </div>
   );
