@@ -7,12 +7,12 @@
         visibility: hidden;
     }
 
-    >textarea {
+    >.textarea {
         resize: none;
         overflow: hidden;
     }
 
-    >textarea,
+    >.textarea,
     &::after {
         --padding: 2rem;
         padding: var(--padding);
